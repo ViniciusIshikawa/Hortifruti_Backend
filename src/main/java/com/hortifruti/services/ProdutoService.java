@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hortifruti.domain.Produto;
+import com.hortifruti.domain.enums.TipoAlimento;
 import com.hortifruti.dto.ProdutoDTO;
 import com.hortifruti.repositories.ProdutoRepository;
 
@@ -49,6 +50,6 @@ public class ProdutoService {
 	}
 	
 	public Produto fromDTO(ProdutoDTO objDTO) {
-		return new Produto(objDTO.getId(), objDTO.getNome(), objDTO.getPreco(), objDTO.getTipoAlimento());
+		return new Produto(objDTO.getId(), objDTO.getNome(), objDTO.getPreco(), TipoAlimento.toEnum(objDTO.getTipoAlimento()));
 	}
 }

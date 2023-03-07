@@ -21,16 +21,10 @@ public class ProdutoDTO implements Serializable {
 	private Double preco;
 	
 	@NotNull(message = "Tipo do alimento obrigatório")
-	private TipoAlimento tipoAlimento;
+	private Integer tipoAlimento;
 	
 	public ProdutoDTO() {}
 	
-	public ProdutoDTO(Produto obj) {
-		id = obj.getId();
-		nome = obj.getNome();
-		preco = obj.getPreco();
-		tipoAlimento = obj.getTipoAlimento();
-	}
 
 	public Integer getId() {
 		return id;
@@ -56,11 +50,11 @@ public class ProdutoDTO implements Serializable {
 		this.preco = preco;
 	}
 	
-	public TipoAlimento getTipoAlimento() {
+	public Integer getTipoAlimento() {
 		return tipoAlimento;
 	}
 	
-	public void setTipoAlimento(TipoAlimento tipoAlimento) {
+	public void setTipoAlimento(Integer tipoAlimento) {
 		this.tipoAlimento = tipoAlimento;
 	}
 
